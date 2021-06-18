@@ -18,7 +18,7 @@ class ClosedCaptionsService {
     String baseURL =
         "https://video.google.com/timedtext?lang=$language&v=$videoID";
 
-    http.Response res = await http.get(baseURL);
+    http.Response res = await http.get(Uri.parse(baseURL));
     String jsonData = _convertJSON(res.body);
     print(jsonData);
     Map<String, dynamic> mapData = jsonDecode(jsonData);
@@ -35,7 +35,7 @@ class ClosedCaptionsService {
     String baseURL =
         "https://video.google.com/timedtext?lang=$language&v=$videoID";
 
-    http.Response res = await http.get(baseURL);
+    http.Response res = await http.get(Uri.parse(baseURL));
     String jsonData = _convertJSON(res.body);
 
     Map<String, dynamic> mapData = jsonDecode(jsonData);
